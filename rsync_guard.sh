@@ -18,7 +18,7 @@ if [ "${is_ok}" -ge 1 ]; then
   exit 0
 fi
 
-rsync $target "${key}" "${user}@${bkp_host}:backup/$(basename ${target}).${mtime}"
+rsync -e "ssh -o StrictHostKeyChecking=no -i ${key}" "${target}" "${user}@${bkp_host}:backup/$(basename ${target}).${mtime}"
 echo "${mtime}" >> backup_list.txt
 
 
