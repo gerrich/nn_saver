@@ -1,12 +1,10 @@
 #!/bin/bash
 
-target=/home/user/deepmind/dqn/DQN3_0_1_breakout_FULL_Y.t7
-#target="test"
+target="$1" # /home/user/deepmind/dqn/DQN3_0_1_breakout_FULL_Y.t7
+user="$2" # team_1
+key="$3" # keys/team_1.dsa
 
 bkp_host=93.175.18.243
-user=team_1
-key=keys/team_1.dsa
-
 
 [ -f backup_list.txt ] || touch backup_list.txt
 
